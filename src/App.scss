@@ -34,3 +34,11 @@ progress {
   border: thin solid $light-grey;
   background-color: $off-white;
 }
+
+.checked {
+  text-decoration: line-through;
+}
+
+.space-left {
+  margin-left: 8px;
+}

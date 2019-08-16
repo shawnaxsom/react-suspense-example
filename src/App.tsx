@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import "./App.scss";
 import "./checkmarks.scss";
 import { withCache } from "./components/withCache";
@@ -26,7 +26,11 @@ const Todo = ({ item }) => {
             checked={checked}
             onClick={() => setChecked(!checked)}
           />
-          <label htmlFor={`styled-checkbox-2 ${checked ? "checked" : ""}`}>
+
+          <label
+            htmlFor="styled-checkbox-2"
+            className={`space-left ${checked ? "checked" : ""}`}
+          >
             {item.title}
           </label>
         </div>
