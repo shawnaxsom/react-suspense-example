@@ -16,29 +16,20 @@ const Todo = ({ item }) => {
   const [checked, setChecked] = useState(false);
 
   return (
-    <div className="column is-4 todo">
-      <div
-        className="field"
-        onClick={() => {
-          setChecked(!checked);
-        }}
-      >
-        <input
-          className="switch"
-          type="checkbox"
-          checked={checked}
-          onChange={e => {
-            setChecked(e.target.checked);
-          }}
-        />
+    <div
+      onClick={() => {
+        setChecked(!checked);
+      }}
+      className={`column is-4 todo ${checked ? "checked" : ""}`}
+    >
+      <input type="checkbox" checked={checked} />
 
-        <label
-          htmlFor="styled-checkbox-2"
-          className={`space-left ${checked ? "checked" : ""}`}
-        >
-          {item.title}
-        </label>
-      </div>
+      <label
+        htmlFor="styled-checkbox-2"
+        className={`checkbox space-left ${checked ? "checked" : ""}`}
+      >
+        {item.title}
+      </label>
     </div>
   );
 };
