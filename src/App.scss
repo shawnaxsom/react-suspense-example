@@ -1,16 +1,13 @@
+$light-grey: #ddd;
+$off-white: #f8f8f8;
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,11 +20,17 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  margin-top: 20px;
+}
+
+progress {
+  margin-top: 30vh;
+}
+
+.todo {
+  margin: 2rem;
+  border-radius: 2rem;
+  border: thin solid $light-grey;
+  background-color: $off-white;
 }
