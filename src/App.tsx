@@ -1,6 +1,6 @@
 import React, { useState, Suspense } from "react";
+import "bulma/css/bulma.css";
 import "./App.scss";
-import "./checkmarks.scss";
 import { withCache } from "./components/withCache";
 import { createResource } from "simple-cache-provider";
 
@@ -17,24 +17,28 @@ const Todo = ({ item }) => {
 
   return (
     <div className="column is-4 todo">
-      <section title=".squaredTwo">
-        <div className="squaredTwo">
-          <input
-            id="styled-checkbox-2"
-            type="checkbox"
-            value="value2"
-            checked={checked}
-            onClick={() => setChecked(!checked)}
-          />
+      <div
+        className="field"
+        onClick={() => {
+          setChecked(!checked);
+        }}
+      >
+        <input
+          className="switch"
+          type="checkbox"
+          checked={checked}
+          onChange={e => {
+            setChecked(e.target.checked);
+          }}
+        />
 
-          <label
-            htmlFor="styled-checkbox-2"
-            className={`space-left ${checked ? "checked" : ""}`}
-          >
-            {item.title}
-          </label>
-        </div>
-      </section>
+        <label
+          htmlFor="styled-checkbox-2"
+          className={`space-left ${checked ? "checked" : ""}`}
+        >
+          {item.title}
+        </label>
+      </div>
     </div>
   );
 };
